@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Пример сайта</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <div class="header">
+    <div class="header-left">
+      <img src="img/i.webp" alt="Фото">
+      <div class="header-text">Трилогия метро 2033</div>
+    </div>
+    <div class="header-buttons">
+     <p>Дмитрий Глуховский</p>
+     <p>Роман</p>
+    </div>
+  </div>
+
+  <!-- Слайдер -->
+  <div class="slider">
+    <div class="slides">
+      <img src="img/019309ed-7f84-771e-b1f0-a0d2fefe9174.jpg" alt="Слайд 1" >
+      <img src="img/0199ef11-cd8f-7f14-9e41-ce023aaf81f5.jpg" alt="Слайд 2">
+      <img src="img/-book-lg!bfm.jpg" alt="Слайд 3">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Фото + текст + кнопка -->
+  <div class="section">
+    <img src="img/019309ed-7f84-771e-b1f0-a0d2fefe9174.jpg" alt="Фото">
+    <div class="section-text">
+      <p>«Метро́ 2033» — постапокалиптический роман Дмитрия Глуховского, описывающий жизнь людей в московском метро после ядерной войны на Земле. Выпущен издательством «Эксмо» в 2005 году и переиздан издательством «Популярная литература» в 2007 году. На европейском литературном конкурсе «Еврокон» роман назван «Лучшим дебютом» 2007 года</p>
+     <a href="https://www.litres.ru/book/dmitriy-gluhovskiy/metro-2033-128391/chitat-onlayn/"> <button>Читать</button></a>
+    </div>
+  </div>
+
+  <!-- Галерея -->
+  <div class="gallery">
+    <img src="img/r.jpg" alt="Фото 1">
+    <img src="img/b.jpg" alt="Фото 2">
+    <img src="img/d.jpg" alt="Фото 3">
+    <img src="img/metro2034.jpg" alt="Фото 4">
+  </div>
+
+  <!-- Форма -->
+  <div class="form">
+    <input type="text" placeholder="Фамилия Имя">
+    <input type="text" placeholder="Оставить заявку">
+    <button>Ввод</button>
+  </div>
+
+  <!-- Иконки приложений -->
+  
+  <div class="footer-icons">
+   <a href="https://www.instagram.com/"> <img src="img/p.webp" alt="App1"></a>
+   <a href=" https://web.telegram.org/k/"> <img src="img/Telegram_2019_Logo.svg.webp" alt="App2"></a>
+   <a href="https://www.facebook.com/?locale=ru_RU"> <img src="img/FB_B.png" alt="App3"></a>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides'); const images = document.querySelectorAll('.slides img'); let index = 0; function updateSlider() { const slideWidth = images[0].clientWidth; slides.style.transform = `translateX(${-slideWidth * index}px)`; } document.querySelector('.next').addEventListener('click', () => { index = (index + 1) % images.length; updateSlider(); }); document.querySelector('.prev').addEventListener('click', () => { index = (index - 1 + images.length) % images.length; updateSlider(); }); window.addEventListener('resize', updateSlider);
+  </script>
+
+</body>
+</html>
